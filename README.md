@@ -13,7 +13,7 @@ This project sets up the **Seeed Studio XIAO ESP32-C6** as a Wi-Fi Access Point 
 
 ## 🔧 **Hardware Setup**  
 - **XIAO ESP32-C6** board  
-- **LED connected to GPIO 15** (or use onboard LED if available)  
+- **LED connected to GPIO 15** (This is the onboard LED)  
 
 ---
 
