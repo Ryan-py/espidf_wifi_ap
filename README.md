@@ -1,32 +1,57 @@
-# _Sample project_
+### 🚀 **ESP32-C6 Xiao: Wi-Fi AP with LED Indicator**  
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+This project sets up the **Seeed Studio XIAO ESP32-C6** as a Wi-Fi Access Point (AP) and blinks an LED to indicate activity.  
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+---
 
+## 📌 **Features**  
+✅ Creates a Wi-Fi AP named **"it_hurts_when_IP"** with password **"12345678"**  
+✅ Logs when devices connect or disconnect  
+✅ Blinks an LED on **GPIO 15**  
 
+---
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+## 🔧 **Hardware Setup**  
+- **XIAO ESP32-C6** board  
+- **LED connected to GPIO 15** (or use onboard LED if available)  
 
-## Example folder contents
+---
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+## 🛠 **Installation**  
+1️⃣ Install **ESP-IDF** (latest version recommended)  
+2️⃣ Clone or copy the project files  
+3️⃣ Compile and flash using:  
+   ```sh
+   idf.py build flash monitor
+   ```  
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
+---
 
-Below is short explanation of remaining files in the project folder.
+## 📜 **Code Overview**  
+### **1. Wi-Fi AP Initialization (`my_ap_init()`)**  
+- Sets up ESP32-C6 in **AP mode**  
+- Allows up to **10 connections**  
+- Logs connection/disconnection events  
 
+### **2. LED Indicator Task (`led_indicator()`)**  
+- Blinks LED every **500ms**  
+
+### **3. Event Handling (`wifi_event_handler()`)**  
+- Logs MAC address of connected/disconnected devices  
+
+---
+
+## ⚡ **Example Log Output**  
 ```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
+I (1000) My_AP_cool: Wi-Fi AP started. SSID: it_hurts_when_IP
+I (2000) Wi-Fi: Device connected: AA:BB:CC:DD:EE:FF, AID=1
+I (5000) Wi-Fi: Device disconnected: AA:BB:CC:DD:EE:FF, AID=1
 ```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+
+---
+
+## 📝 **Customization**  
+- Change **SSID & password** in `wifi_config_t`  
+- Modify **LED blink rate** in `vTaskDelay()`  
+
+Enjoy your **ESP32-C6 Wi-Fi AP project!** 🎉
