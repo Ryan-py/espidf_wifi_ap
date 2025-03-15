@@ -43,7 +43,7 @@ This project sets up the **Seeed Studio XIAO ESP32-C6** as a Wi-Fi Access Point 
 
 ## ⚡ **Example Log Output**  
 ```
-I (1000) My_AP_cool: Wi-Fi AP started. SSID: it_hurts_when_IP
+I (1000) My_AP_cool: Wi-Fi AP started. SSID: my_ssid
 I (2000) Wi-Fi: Device connected: AA:BB:CC:DD:EE:FF, AID=1
 I (5000) Wi-Fi: Device disconnected: AA:BB:CC:DD:EE:FF, AID=1
 ```
